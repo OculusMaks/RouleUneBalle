@@ -23,9 +23,16 @@ public class CameraManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
+        // Recupere les mouvements horizontaux de la souris et l'applique au transform de la camera
+        float turnSpeed = 4.0f;
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
+
         // On applique la distance initiale entre le joueur et la caméra à chaque frame
         this.transform.position = joueur.transform.position + offset;
+
+        // Oblige la camera a tout le temps se tourner vers le joueur
+        transform.LookAt(joueur.transform.position);
     }
 }

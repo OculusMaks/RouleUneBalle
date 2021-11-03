@@ -13,6 +13,10 @@ public class ForceManager : MonoBehaviour
     private Rigidbody rb;
     // La variable vitesse est déclarée publique pour pouvoir la manipuler sepuis l'éditeur Unity
     public float speed;
+    // Variable de puissance de saut
+    public float jumpSpeed;
+    // Variable pour recuperer la rotation de la camera
+    public GameObject cameraPlayer;
     //
     public Text countText;
     private int count;
@@ -20,6 +24,8 @@ public class ForceManager : MonoBehaviour
     // On initie nos variables
     void Awake ()
     {
+        // On initie notre variable de puissance de saut a 5
+        jumpSpeed = 5f;
         // rb est instancié en prenant comme valeur celles du Rigidbody associé au présent GameObject
         rb = GetComponent<Rigidbody>();
         
@@ -30,9 +36,18 @@ public class ForceManager : MonoBehaviour
         SetCountText ();
         winText.text = "";
 }
+    private void Update()
+    {
 
+        // Comme nous sommes obliges de recuperer les Input etant vrais pour 1 frame, nous devons utiliser Update avec le rigidbody pour ne pas louper des frames avec FixedUpdate
+        // Clarification : forces continues dans FixedUpdate, one-off force dans Update
+        if (Input.GetMouseButtonDown(0))
+        {
+            rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
+        }
+    }
     // Ajouter une force à un gameobject à chaque fixedFrame
-        private void FixedUpdate()
+    private void FixedUpdate()
     {
         // On récupère les valeurs de nos Input et on les stocke dans des variables de type float
         // Ces variables contiennent donc une valeur pour se diriger sur un axe horizontal ou vertical

@@ -10,7 +10,7 @@ public class OutOfBoundManager : MonoBehaviour
     {
         // "other" désigne l'autre objet entré en contact avec le présent GameObject (la frontière)
         // On fait une transformation de position pour placer l'objet à l'origine, au-dessus de la plateforme
-        other.transform.position = new Vector3(0f, 4f, 0f);
+        other.transform.position = new Vector3(0f, 3f, 0f);
     }
 
 }
