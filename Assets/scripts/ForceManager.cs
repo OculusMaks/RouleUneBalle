@@ -11,6 +11,7 @@ public class ForceManager : MonoBehaviour
     // On veut manipuler la force du GameObject. Seule solution : appeler la classe Rigidbody
     // La variable reste privée car on ne la manipule que dans la présente classe
     private Rigidbody rb;
+
     // La variable vitesse est déclarée publique pour pouvoir la manipuler sepuis l'éditeur Unity
     public float speed;
     // Variable de puissance de saut
@@ -57,6 +58,8 @@ public class ForceManager : MonoBehaviour
         // On créé un vecteur Vector3 contenant les variables sur les axes X et Z récupérés précédemment
         // L'axe Y vertical ne peut pas être modifié par ces variables, donc on laisse sa valeur à 0
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
+        // Effectue une rotation du vecteur mouvement selon la rotation de la camera autour de l'axe Y
+        movement = Quaternion.AngleAxis(cameraPlayer.transform.rotation.eulerAngles.y, Vector3.up) * movement;
 
         // On fait appel à la méthode AddForce de la classe Rigidbody pour "pousser" notre objet
         // RigidBody est assigné à notre GameObject pour être influencé par la gravité
