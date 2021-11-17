@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f7e4f9b1cb815f842a68661aae2c178f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - beep1: {fileID: 8300000, guid: 5260cbef44e48d94bb0652ca79b08964, type: 3}
+  - beep2: {fileID: 8300000, guid: b310f53c42356c742baa90950b74aa57, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

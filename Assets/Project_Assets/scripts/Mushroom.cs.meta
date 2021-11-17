@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: bc6d39c7abc9aa747ab83b9af52d33c9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LifeUp: {fileID: 8300000, guid: 5260cbef44e48d94bb0652ca79b08964, type: 3}
+  - Mastiquer: {fileID: 8300000, guid: b310f53c42356c742baa90950b74aa57, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
