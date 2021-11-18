@@ -28,10 +28,10 @@ public class Mushroom : MonoBehaviour
     {
         sourceBeep.clip = Mastiquer;
         sourceBeep.Play(0);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         sourceBeep.clip = LifeUp;
         sourceBeep.Play(0);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         this.gameObject.SetActive(false);
     }
 
