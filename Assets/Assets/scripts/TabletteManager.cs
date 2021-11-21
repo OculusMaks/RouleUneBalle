@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class TabletteManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Fonction D'activation Deactivation a partir de l'inspecteur. Appeler par le bouton UI du canva dans l'action "On Clic()".
      public void ActivateDeactivate()
     {
         bool isActive = this.gameObject.activeSelf;

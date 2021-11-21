@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Mushroom : MonoBehaviour
+    //Instantie les clips audios qui seront utiliser dans le script.
 {
     public AudioClip LifeUp;
     public AudioClip Mastiquer;
     private AudioSource sourceBeep;
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update / Va chercher le son demander.
     void Start()
     {
         sourceBeep = this.GetComponent<AudioSource>();
@@ -23,7 +24,8 @@ public class Mushroom : MonoBehaviour
         }
     }
 
-    // la coroutine MakeSound joue le son 1, attend 4s, puis joue le son 2
+    // la coroutine MakeSound joue le son 1, attend 1s, puis joue le son 2.Un second arret de 0.5 seconde permet d'avoir
+    // une transition plus fluid avant de desactiver l'objet!
     private IEnumerator MakeSound()
     {
         sourceBeep.clip = Mastiquer;
