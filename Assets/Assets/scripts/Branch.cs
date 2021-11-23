@@ -14,22 +14,13 @@ public class Branch : MonoBehaviour
     }
 
     // si la collision est faite avec le joueur, démarrer la coroutine MakeSound
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Feu Detecter");
-        if (collision.gameObject.tag == "FireCamp")
+        if (other.gameObject.CompareTag("FireCamp"))
         {
-            StartCoroutine(MakeSound());
+             this.gameObject.SetActive(false);
         }
-    }
-
-    // la coroutine MakeSound joue le son 1, attend 4s, puis joue le son 2
-    private IEnumerator MakeSound()
-    {
-        sourceBeep.clip = Ignition;
-        sourceBeep.Play(0);
-        yield return new WaitForSeconds(0.5f);
-        this.gameObject.SetActive(false);
     }
 
 
